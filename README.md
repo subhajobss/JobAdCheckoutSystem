@@ -1,3 +1,9 @@
+# Instructions to Run this App
+
+    projectfolder :  Node Server
+    projectfolder : ng serve
+
+
 # CheckoutApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
