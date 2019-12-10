@@ -6,7 +6,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { CheckoutService } from './checkout.service';
 
-describe('AppComponent', () => {
+describe('CheckoutComponent', () => {
     beforeEach(async(() => {
       TestBed.configureTestingModule({
         imports: [
@@ -55,7 +55,6 @@ describe('AppComponent', () => {
         
         let selectedAd =  {id:1,type:'Classic Ad',description:'BasicLevel',price:269.99};
         app.addItemWithOffer(selectedAd);
-        console.log(app.totalAmount,'###############################################')
         expect(app.totalAmount).toBe(539.98);
         expect(app.offerMessage).toBe('Offer Applied: Total no of Classic Ads : 3 Price Calculated for 2 Ads');
       });
@@ -76,7 +75,6 @@ describe('AppComponent', () => {
         
         let selectedAd =  {id:1,type:'Standout Ad',description:'BasicLevel',price:100};
         app.addItemWithOffer(selectedAd);
-        console.log(app.totalAmount,'###############################################')
         expect(app.totalAmount).toBe(80);
         expect(app.offerMessage).toBe('Reduced Price $ 80 Applied');
       })

@@ -39,5 +39,5 @@
 
 <div> <h4><span>Total : </span><span *ngIf="totalAmount>0"> $ {{totalAmount}} </span> <h3 class="dealText">{{offerMessage}}</h3></h4>
    
-<div><button [disabled]="totalAmount==0" mat-raised-button color="warn" (click)="addItemWithOffer()">Checkout</button> </div>
+<div><button [disabled]="totalAmount==0" mat-raised-button color="warn" (click)="checkout()">Checkout</button> </div>
 </div>

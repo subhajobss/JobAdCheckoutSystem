@@ -93,6 +93,11 @@ export class CheckoutComponent implements OnInit{
        } 
     }
 
+    checkout(){
+        this.offerMessage = 'Ads Purchased Successfully';
+        this.totalAmount = 0;
+    }
+
 }
 
 export interface Advertisement{
