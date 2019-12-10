@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 2rem;
+  }
+  
+  table {
+    text-align: left;
+    position: relative;
+    border-collapse: collapse; 
+  }
+  th {
+    padding: 0.85rem;
+  }
+  td{
+    padding : 0.45rem;
+  }
+  tr.orange th {
+    background: #ffae00;
+    color: white;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+  }
+  .dealText{
+    color: green;
+  }

@@ -1,0 +1,43 @@
+<!-- Customer Selection -->
+<div style="margin:5%">
+        <mat-form-field>
+          <mat-label>Select a Customer</mat-label>
+          <mat-select [(ngModel)]="selectedCustomer" (selectionChange)="onCustomerSelection()">
+            <mat-option *ngFor="let customer of customers" [value]="customer.value">
+              {{customer.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+</div>
+<h3 *ngIf="privilegedCustomer" class="dealText"> Eligible Deals : {{dealForCustomer}}</h3>
+<table>
+  <thead>
+    <tr class="orange">
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th></th>     
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let jobAd of jobAdsList" >
+       <td>{{jobAd.type}}</td>
+       <td>{{jobAd.description}}</td>
+       <td>${{jobAd.price}}</td>
+       <td> <button mat-button color="primary" *ngIf="privilegedCustomer" (click)="addItemWithOffer(jobAd)">Add</button> </td>        
+       <td> <button mat-button color="primary" *ngIf="!privilegedCustomer" (click)="addItem(jobAd)">Add</button> </td>        
+    </tr>
+  </tbody>
+</table>
+
+
+
+<div *ngIf="classicAdCount > 0"> Classic Ad  : {{ classicAdCount }} </div>
+<div *ngIf="standoutAdCount > 0"> Standout Ad : {{ standoutAdCount }}</div>
+<div *ngIf="premiumAdCount > 0"> Premium Ad  : {{ premiumAdCount }}</div>
+
+
+<div> <h4><span>Total : </span><span *ngIf="totalAmount>0"> $ {{totalAmount}} </span> <h3 class="dealText">{{offerMessage}}</h3></h4>
+   
+<div><button [disabled]="totalAmount==0" mat-raised-button color="warn" (click)="addItemWithOffer()">Checkout</button> </div>
+</div>
